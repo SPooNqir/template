@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z&github.com/slavayssiere-spoon/template\222A\234\004\022\214\001\n\032Spoon - Template Golang WS\"g\n\020Spoon Cloud Team\0223https://gitlab.com/SpoonQIR/Cloud/services/template\032\036sebastien.lavayssiere@spoon.ai2\0050.0.1*\002\002\0012\020application/json:\020application/jsonRP\n\003403\022I\nGReturned when the user does not have permission to access the resource.R;\n\003404\0224\n*Returned when the resource does not exist.\022\006\n\004\232\002\001\007RW\n\003418\022P\n\rI\'m a teapot.\022?\n=\032;.grpc.gateway.examples.internal.proto.examplepb.NumericEnumZ#\n!\n\nApiKeyAuth\022\023\010\002\032\rAuthorization \002b\020\n\016\n\nApiKeyAuth\022\000rD\n\rlink for docs\0223https://gitlab.com/SpoonQIR/Cloud/services/template',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0etemplate.proto\x12\x0ftemplate_golang\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"a\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\x04\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12,\n\x08lastData\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04test\x18\x04 \x01(\x08\x32\xc8\x01\n\x0ftemplate_golang\x12X\n\x03Get\x12\x19.template_golang.Template\x1a\x19.template_golang.Template\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/template_golang\x12[\n\x06\x43reate\x12\x19.template_golang.Template\x1a\x19.template_golang.Template\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x13/v1/template_golangB\xc8\x04Z&github.com/slavayssiere-spoon/template\x92\x41\x9c\x04\x12\x8c\x01\n\x1aSpoon - Template Golang WS\"g\n\x10Spoon Cloud Team\x12\x33https://gitlab.com/SpoonQIR/Cloud/services/template\x1a\x1esebastien.lavayssiere@spoon.ai2\x05\x30.0.1*\x02\x02\x01\x32\x10\x61pplication/json:\x10\x61pplication/jsonRP\n\x03\x34\x30\x33\x12I\nGReturned when the user does not have permission to access the resource.R;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07RW\n\x03\x34\x31\x38\x12P\n\rI\'m a teapot.\x12?\n=\x1a;.grpc.gateway.examples.internal.proto.examplepb.NumericEnumZ#\n!\n\nApiKeyAuth\x12\x13\x08\x02\x1a\rAuthorization \x02\x62\x10\n\x0e\n\nApiKeyAuth\x12\x00rD\n\rlink for docs\x12\x33https://gitlab.com/SpoonQIR/Cloud/services/templateb\x06proto3'
+  serialized_pb=b'\n\x0etemplate.proto\x12\x0ftemplate_golang\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"a\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\x04\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12,\n\x08lastData\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04test\x18\x04 \x01(\x08\x32\xcb\x01\n\x0ftemplate_golang\x12X\n\x03Get\x12\x19.template_golang.Template\x1a\x19.template_golang.Template\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/template_golang\x12^\n\x06\x43reate\x12\x19.template_golang.Template\x1a\x19.template_golang.Template\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/template_golang:\x01*B\xc8\x04Z&github.com/slavayssiere-spoon/template\x92\x41\x9c\x04\x12\x8c\x01\n\x1aSpoon - Template Golang WS\"g\n\x10Spoon Cloud Team\x12\x33https://gitlab.com/SpoonQIR/Cloud/services/template\x1a\x1esebastien.lavayssiere@spoon.ai2\x05\x30.0.1*\x02\x02\x01\x32\x10\x61pplication/json:\x10\x61pplication/jsonRP\n\x03\x34\x30\x33\x12I\nGReturned when the user does not have permission to access the resource.R;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07RW\n\x03\x34\x31\x38\x12P\n\rI\'m a teapot.\x12?\n=\x1a;.grpc.gateway.examples.internal.proto.examplepb.NumericEnumZ#\n!\n\nApiKeyAuth\x12\x13\x08\x02\x1a\rAuthorization \x02\x62\x10\n\x0e\n\nApiKeyAuth\x12\x00rD\n\rlink for docs\x12\x33https://gitlab.com/SpoonQIR/Cloud/services/templateb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -103,7 +103,7 @@ _TEMPLATE_GOLANG = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=246,
-  serialized_end=446,
+  serialized_end=449,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -122,7 +122,7 @@ _TEMPLATE_GOLANG = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_TEMPLATE,
     output_type=_TEMPLATE,
-    serialized_options=b'\202\323\344\223\002\025\"\023/v1/template_golang',
+    serialized_options=b'\202\323\344\223\002\030\"\023/v1/template_golang:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])
