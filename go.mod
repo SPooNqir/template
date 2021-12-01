@@ -1,4 +1,4 @@
-module github.com/slavayssiere-spoon/health
+module github.com/slavayssiere-spoon/template
 
 go 1.17
 
