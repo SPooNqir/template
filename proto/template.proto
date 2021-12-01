@@ -90,6 +90,7 @@ service template_golang {
 	rpc Create (Template) returns (Template) {
 		option (google.api.http) = {
 			post: "/v1/template_golang"
+			body: "*"
 		};
 	}
 }
