@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package template_golang;
+package template;
 
 option go_package = "github.com/slavayssiere-spoon/template";
 
@@ -73,21 +73,21 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
 	}
 };
 
-message Template {
+message TemplateData {
 	uint64 id = 1;
 	string email = 2;
 	google.protobuf.Timestamp lastData = 3;
 	bool test = 4;
 }
 
-service template_golang {
-	rpc Get (Template) returns (Template) {
+service Template {
+	rpc Get (TemplateData) returns (TemplateData) {
 		option (google.api.http) = {
 			get: "/v1/template_golang"
 		};
 	}
 
-	rpc Create (Template) returns (Template) {
+	rpc Create (TemplateData) returns (TemplateData) {
 		option (google.api.http) = {
 			post: "/v1/template_golang"
 			body: "*"

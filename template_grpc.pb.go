@@ -14,122 +14,122 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// TemplateGolangClient is the client API for TemplateGolang service.
+// TemplateClient is the client API for Template service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type TemplateGolangClient interface {
-	Get(ctx context.Context, in *Template, opts ...grpc.CallOption) (*Template, error)
-	Create(ctx context.Context, in *Template, opts ...grpc.CallOption) (*Template, error)
+type TemplateClient interface {
+	Get(ctx context.Context, in *TemplateData, opts ...grpc.CallOption) (*TemplateData, error)
+	Create(ctx context.Context, in *TemplateData, opts ...grpc.CallOption) (*TemplateData, error)
 }
 
-type templateGolangClient struct {
+type templateClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewTemplateGolangClient(cc grpc.ClientConnInterface) TemplateGolangClient {
-	return &templateGolangClient{cc}
+func NewTemplateClient(cc grpc.ClientConnInterface) TemplateClient {
+	return &templateClient{cc}
 }
 
-func (c *templateGolangClient) Get(ctx context.Context, in *Template, opts ...grpc.CallOption) (*Template, error) {
-	out := new(Template)
-	err := c.cc.Invoke(ctx, "/template_golang.template_golang/Get", in, out, opts...)
+func (c *templateClient) Get(ctx context.Context, in *TemplateData, opts ...grpc.CallOption) (*TemplateData, error) {
+	out := new(TemplateData)
+	err := c.cc.Invoke(ctx, "/template.Template/Get", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *templateGolangClient) Create(ctx context.Context, in *Template, opts ...grpc.CallOption) (*Template, error) {
-	out := new(Template)
-	err := c.cc.Invoke(ctx, "/template_golang.template_golang/Create", in, out, opts...)
+func (c *templateClient) Create(ctx context.Context, in *TemplateData, opts ...grpc.CallOption) (*TemplateData, error) {
+	out := new(TemplateData)
+	err := c.cc.Invoke(ctx, "/template.Template/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// TemplateGolangServer is the server API for TemplateGolang service.
-// All implementations must embed UnimplementedTemplateGolangServer
+// TemplateServer is the server API for Template service.
+// All implementations must embed UnimplementedTemplateServer
 // for forward compatibility
-type TemplateGolangServer interface {
-	Get(context.Context, *Template) (*Template, error)
-	Create(context.Context, *Template) (*Template, error)
-	mustEmbedUnimplementedTemplateGolangServer()
+type TemplateServer interface {
+	Get(context.Context, *TemplateData) (*TemplateData, error)
+	Create(context.Context, *TemplateData) (*TemplateData, error)
+	mustEmbedUnimplementedTemplateServer()
 }
 
-// UnimplementedTemplateGolangServer must be embedded to have forward compatible implementations.
-type UnimplementedTemplateGolangServer struct {
+// UnimplementedTemplateServer must be embedded to have forward compatible implementations.
+type UnimplementedTemplateServer struct {
 }
 
-func (UnimplementedTemplateGolangServer) Get(context.Context, *Template) (*Template, error) {
+func (UnimplementedTemplateServer) Get(context.Context, *TemplateData) (*TemplateData, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedTemplateGolangServer) Create(context.Context, *Template) (*Template, error) {
+func (UnimplementedTemplateServer) Create(context.Context, *TemplateData) (*TemplateData, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedTemplateGolangServer) mustEmbedUnimplementedTemplateGolangServer() {}
+func (UnimplementedTemplateServer) mustEmbedUnimplementedTemplateServer() {}
 
-// UnsafeTemplateGolangServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to TemplateGolangServer will
+// UnsafeTemplateServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to TemplateServer will
 // result in compilation errors.
-type UnsafeTemplateGolangServer interface {
-	mustEmbedUnimplementedTemplateGolangServer()
+type UnsafeTemplateServer interface {
+	mustEmbedUnimplementedTemplateServer()
 }
 
-func RegisterTemplateGolangServer(s grpc.ServiceRegistrar, srv TemplateGolangServer) {
-	s.RegisterService(&TemplateGolang_ServiceDesc, srv)
+func RegisterTemplateServer(s grpc.ServiceRegistrar, srv TemplateServer) {
+	s.RegisterService(&Template_ServiceDesc, srv)
 }
 
-func _TemplateGolang_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Template)
+func _Template_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TemplateData)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TemplateGolangServer).Get(ctx, in)
+		return srv.(TemplateServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/template_golang.template_golang/Get",
+		FullMethod: "/template.Template/Get",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TemplateGolangServer).Get(ctx, req.(*Template))
+		return srv.(TemplateServer).Get(ctx, req.(*TemplateData))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TemplateGolang_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Template)
+func _Template_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TemplateData)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TemplateGolangServer).Create(ctx, in)
+		return srv.(TemplateServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/template_golang.template_golang/Create",
+		FullMethod: "/template.Template/Create",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TemplateGolangServer).Create(ctx, req.(*Template))
+		return srv.(TemplateServer).Create(ctx, req.(*TemplateData))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// TemplateGolang_ServiceDesc is the grpc.ServiceDesc for TemplateGolang service.
+// Template_ServiceDesc is the grpc.ServiceDesc for Template service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var TemplateGolang_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "template_golang.template_golang",
-	HandlerType: (*TemplateGolangServer)(nil),
+var Template_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "template.Template",
+	HandlerType: (*TemplateServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _TemplateGolang_Get_Handler,
+			Handler:    _Template_Get_Handler,
 		},
 		{
 			MethodName: "Create",
-			Handler:    _TemplateGolang_Create_Handler,
+			Handler:    _Template_Create_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

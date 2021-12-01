@@ -11,7 +11,7 @@
   },
   "tags": [
     {
-      "name": "template_golang"
+      "name": "Template"
     }
   ],
   "schemes": [
@@ -27,12 +27,12 @@
   "paths": {
     "/v1/template_golang": {
       "get": {
-        "operationId": "template_golang_Get",
+        "operationId": "Template_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/template_golangTemplate"
+              "$ref": "#/definitions/templateTemplateData"
             }
           },
           "403": {
@@ -88,16 +88,16 @@
           }
         ],
         "tags": [
-          "template_golang"
+          "Template"
         ]
       },
       "post": {
-        "operationId": "template_golang_Create",
+        "operationId": "Template_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/template_golangTemplate"
+              "$ref": "#/definitions/templateTemplateData"
             }
           },
           "403": {
@@ -130,12 +130,12 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/template_golangTemplate"
+              "$ref": "#/definitions/templateTemplateData"
             }
           }
         ],
         "tags": [
-          "template_golang"
+          "Template"
         ]
       }
     }
@@ -168,7 +168,7 @@
         }
       }
     },
-    "template_golangTemplate": {
+    "templateTemplateData": {
       "type": "object",
       "properties": {
         "id": {

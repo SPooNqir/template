@@ -5,7 +5,7 @@ import grpc
 import template_pb2 as template__pb2
 
 
-class template_golangStub(object):
+class TemplateStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,18 +15,18 @@ class template_golangStub(object):
             channel: A grpc.Channel.
         """
         self.Get = channel.unary_unary(
-                '/template_golang.template_golang/Get',
-                request_serializer=template__pb2.Template.SerializeToString,
-                response_deserializer=template__pb2.Template.FromString,
+                '/template.Template/Get',
+                request_serializer=template__pb2.TemplateData.SerializeToString,
+                response_deserializer=template__pb2.TemplateData.FromString,
                 )
         self.Create = channel.unary_unary(
-                '/template_golang.template_golang/Create',
-                request_serializer=template__pb2.Template.SerializeToString,
-                response_deserializer=template__pb2.Template.FromString,
+                '/template.Template/Create',
+                request_serializer=template__pb2.TemplateData.SerializeToString,
+                response_deserializer=template__pb2.TemplateData.FromString,
                 )
 
 
-class template_golangServicer(object):
+class TemplateServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Get(self, request, context):
@@ -42,26 +42,26 @@ class template_golangServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_template_golangServicer_to_server(servicer, server):
+def add_TemplateServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
-                    request_deserializer=template__pb2.Template.FromString,
-                    response_serializer=template__pb2.Template.SerializeToString,
+                    request_deserializer=template__pb2.TemplateData.FromString,
+                    response_serializer=template__pb2.TemplateData.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
-                    request_deserializer=template__pb2.Template.FromString,
-                    response_serializer=template__pb2.Template.SerializeToString,
+                    request_deserializer=template__pb2.TemplateData.FromString,
+                    response_serializer=template__pb2.TemplateData.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'template_golang.template_golang', rpc_method_handlers)
+            'template.Template', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class template_golang(object):
+class Template(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -75,9 +75,9 @@ class template_golang(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/template_golang.template_golang/Get',
-            template__pb2.Template.SerializeToString,
-            template__pb2.Template.FromString,
+        return grpc.experimental.unary_unary(request, target, '/template.Template/Get',
+            template__pb2.TemplateData.SerializeToString,
+            template__pb2.TemplateData.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -92,8 +92,8 @@ class template_golang(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/template_golang.template_golang/Create',
-            template__pb2.Template.SerializeToString,
-            template__pb2.Template.FromString,
+        return grpc.experimental.unary_unary(request, target, '/template.Template/Create',
+            template__pb2.TemplateData.SerializeToString,
+            template__pb2.TemplateData.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
